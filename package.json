@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "clsx": "latest",
     "faker": "^4.1.0",
     "leaflet": "^1.6.0",
     "prop-types": "^15.7.2",
@@ -16,10 +17,10 @@
     "react-dom": "^16.13.0",
     "react-geolocated": "^3.0.1",
     "react-leaflet": "^2.6.3",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "styled-components": "^5.0.1",
-    "styled-tools": "^1.7.1",
-    "clsx": "latest"
+    "styled-tools": "^1.7.1"
   },
   "scripts": {
     "start": "react-scripts start",

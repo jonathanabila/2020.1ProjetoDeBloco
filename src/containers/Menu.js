@@ -123,6 +123,8 @@ export default function Menu(props) {
           <Button variant="outlined">Buscar</Button>
         </Grid>
       </Grid>
+
+      {props.children}
     </Container>
   );
 }
