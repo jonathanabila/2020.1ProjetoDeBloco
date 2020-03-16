@@ -11,14 +11,18 @@ import {
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 import { makeStyles } from '@material-ui/core/styles';
+import CameraAltIcon from '@material-ui/icons/CameraAlt';
+import RateReviewIcon from '@material-ui/icons/RateReview';
 import fakerImage from '../helpers/fakerImage';
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    textAlign: 'center'
+    textAlign: 'center',
+    marginTop: '15px'
   },
   platformTopics: {
+    marginBottom: '15px',
     padding: '10px',
     '& ul': {
       textAlign: 'left',
@@ -48,6 +52,12 @@ const useStyles = makeStyles(theme => ({
         maxWidth: '80%',
         height: 'auto'
       }
+    }
+  },
+  aWithoutDecoration: {
+    '& a': {
+      textDecoration: 'none',
+      color: 'black'
     }
   }
 }));
@@ -79,6 +89,19 @@ export default function Recommendations() {
               </ul>
 
               <Button variant="outlined">Inscreva-se</Button>
+            </Paper>
+            <Paper className={classes.aWithoutDecoration}>
+              <Typography variant="subtitle1" gutterBottom>
+                <b>Compartilhe dicas de viagem</b>
+              </Typography>
+              <a href="/">
+                <CameraAltIcon />
+                <Typography>Publicar fotos</Typography>
+              </a>
+              <a href="/">
+                <RateReviewIcon />
+                <Typography>Fazer Avaliações</Typography>
+              </a>
             </Paper>
           </Grid>
         </Hidden>
