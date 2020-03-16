@@ -24,7 +24,6 @@
     "react/no-deprecated": 1,
     "react/jsx-key": 1,
     "react/jsx-uses-react": 1,
-    "quotes": ["error", "single"],
-    "semi": ["error", "never"]
+    "quotes": ["error", "single"]
   }
 }
