@@ -1,8 +1,8 @@
-import React from 'react'
-import { geolocated } from 'react-geolocated'
-import { Map, TileLayer, Marker } from 'react-leaflet'
-import styled from 'styled-components'
-import { Grid, Container } from '@material-ui/core'
+import React from 'react';
+import { geolocated } from 'react-geolocated';
+import { Map, TileLayer, Marker } from 'react-leaflet';
+import styled from 'styled-components';
+import { Grid, Container } from '@material-ui/core';
 
 const ContainerMap = styled(Map)`
   height: 20vh;
@@ -47,7 +47,7 @@ class Mappable extends React.Component {
       </Container>
     ) : (
       <div>Recuperando os dados sobre a sua localização. </div>
-    )
+    );
   }
 }
 
@@ -57,4 +57,4 @@ export default geolocated({
   },
   watchPosition: true,
   userDecisionTimeout: 5000
-})(Mappable)
+})(Mappable);

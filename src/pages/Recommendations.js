@@ -16,7 +16,7 @@ import fakerImage from '../helpers/fakerImage';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    textAlign: 'center',
+    textAlign: 'center'
   },
   platformTopics: {
     padding: '10px',
@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
       '& img': {
         borderRadius: '25px',
         maxWidth: '80%',
-        height: 'auto',
+        height: 'auto'
       }
     }
   }
@@ -82,7 +82,7 @@ export default function Recommendations() {
             </Paper>
           </Grid>
         </Hidden>
-        <Grid item xs={12} md={6} >
+        <Grid item xs={12} md={6}>
           <Paper>
             <Typography variant="subtitle1" gutterBottom>
               <b>Recomendações para você</b>
@@ -92,28 +92,27 @@ export default function Recommendations() {
 
         <Hidden only={['xs', 'sm']}>
           <Grid item xs={3}>
-              <Paper>
-                <Typography variant="subtitle1" gutterBottom>
-                  <b>Passeios em alta</b>
-                </Typography>
+            <Paper>
+              <Typography variant="subtitle1" gutterBottom>
+                <b>Passeios em alta</b>
+              </Typography>
 
-                <Grid className={classes.images}>
-                  <a href="/">
-                    <img src={fakerImage()} alt="Random city" />
-                  </a>
-                </Grid>
-                <Grid className={classes.images}>
-                  <a href="/">
-                    <img src={fakerImage()} alt="Random city" />
-                  </a>
-                </Grid>
-                <Grid className={classes.images}>
-                  <a href="/">
-                    <img src={fakerImage()} alt="Random city" />
-                  </a>
-                </Grid>
-                
-              </Paper>
+              <Grid className={classes.images}>
+                <a href="/">
+                  <img src={fakerImage()} alt="Random city" />
+                </a>
+              </Grid>
+              <Grid className={classes.images}>
+                <a href="/">
+                  <img src={fakerImage()} alt="Random city" />
+                </a>
+              </Grid>
+              <Grid className={classes.images}>
+                <a href="/">
+                  <img src={fakerImage()} alt="Random city" />
+                </a>
+              </Grid>
+            </Paper>
           </Grid>
         </Hidden>
       </Grid>

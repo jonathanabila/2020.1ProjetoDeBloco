@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Container,
   Button,
@@ -8,7 +8,7 @@ import {
   TextField,
   Grid,
   Hidden
-} from '@material-ui/core'
+} from '@material-ui/core';
 
 const pointsOfInterest = [
   {
@@ -69,15 +69,15 @@ export default function Menu(props) {
       defaultConfig = {
         textField: 12,
         button: 1
-      }
+      };
     }
-    return defaultConfig
+    return defaultConfig;
   };
 
   const [item, setPointOfInterest] = React.useState('');
 
   const handleChange = event => {
-    setPointOfInterest(event.target.value)
+    setPointOfInterest(event.target.value);
   };
 
   return (
@@ -86,7 +86,7 @@ export default function Menu(props) {
         <Hidden only={['xs', 'sm']}>
           <Grid item xs={widthHandle().logo}>
             <a href="/">
-              <img src="../logo.svg" alt="logo"/>
+              <img src="../logo.svg" alt="logo" />
             </a>
           </Grid>
         </Hidden>
@@ -124,5 +124,5 @@ export default function Menu(props) {
         </Grid>
       </Grid>
     </Container>
-  )
+  );
 }
