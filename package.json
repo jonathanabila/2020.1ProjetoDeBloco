@@ -18,7 +18,8 @@
     "react-leaflet": "^2.6.3",
     "react-scripts": "3.4.0",
     "styled-components": "^5.0.1",
-    "styled-tools": "^1.7.1"
+    "styled-tools": "^1.7.1",
+    "clsx": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

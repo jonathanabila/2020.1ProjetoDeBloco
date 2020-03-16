@@ -1,5 +1,11 @@
 const faker = require('faker');
 
-export default function generateRandomImageURL() {
+function generateRandomCityImageURL() {
   return faker.image.city();
 }
+
+function generateRandomFoodImageURL() {
+  return faker.image.food();
+}
+
+export { generateRandomCityImageURL, generateRandomFoodImageURL };

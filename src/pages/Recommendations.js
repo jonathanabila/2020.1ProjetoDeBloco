@@ -13,7 +13,8 @@ import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import { makeStyles } from '@material-ui/core/styles';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import RateReviewIcon from '@material-ui/icons/RateReview';
-import fakerImage from '../helpers/fakerImage';
+import RecipeReviewCard from '../components/Cards';
+import { generateRandomCityImageURL } from '../helpers/fakerImage';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -105,12 +106,19 @@ export default function Recommendations() {
             </Paper>
           </Grid>
         </Hidden>
+
         <Grid item xs={12} md={6}>
           <Paper>
             <Typography variant="subtitle1" gutterBottom>
               <b>Recomendações para você</b>
             </Typography>
           </Paper>
+
+          {Array(10)
+            .fill(1)
+            .map((el, i) => (
+              <RecipeReviewCard key={i} />
+            ))}
         </Grid>
 
         <Hidden only={['xs', 'sm']}>
@@ -122,17 +130,17 @@ export default function Recommendations() {
 
               <Grid className={classes.images}>
                 <a href="/">
-                  <img src={fakerImage()} alt="Random city" />
+                  <img src={generateRandomCityImageURL()} alt="Random city" />
                 </a>
               </Grid>
               <Grid className={classes.images}>
                 <a href="/">
-                  <img src={fakerImage()} alt="Random city" />
+                  <img src={generateRandomCityImageURL()} alt="Random city" />
                 </a>
               </Grid>
               <Grid className={classes.images}>
                 <a href="/">
-                  <img src={fakerImage()} alt="Random city" />
+                  <img src={generateRandomCityImageURL()} alt="Random city" />
                 </a>
               </Grid>
             </Paper>
