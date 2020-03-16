@@ -35,7 +35,7 @@ const pointsOfInterest = [
   {
     value: 'Banheiros'
   }
-]
+];
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -51,11 +51,11 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center'
   }
-}))
+}));
 
 export default function Menu(props) {
-  const classes = useStyles()
-  const { width } = props
+  const classes = useStyles();
+  const { width } = props;
 
   const widthHandle = () => {
     let defaultConfig = {
@@ -63,7 +63,7 @@ export default function Menu(props) {
       textField: 8,
       inputField: 2,
       button: 1
-    }
+    };
 
     if (['xs', 'sm'].indexOf(width) >= 0) {
       defaultConfig = {
@@ -72,13 +72,13 @@ export default function Menu(props) {
       }
     }
     return defaultConfig
-  }
+  };
 
-  const [item, setPointOfInterest] = React.useState('')
+  const [item, setPointOfInterest] = React.useState('');
 
   const handleChange = event => {
     setPointOfInterest(event.target.value)
-  }
+  };
 
   return (
     <Container className={classes.root}>
@@ -86,7 +86,7 @@ export default function Menu(props) {
         <Hidden only={['xs', 'sm']}>
           <Grid item xs={widthHandle().logo}>
             <a href="/">
-              <img src="../logo.svg" />
+              <img src="../logo.svg" alt="logo"/>
             </a>
           </Grid>
         </Hidden>

@@ -7,11 +7,11 @@ import { Grid, Container } from '@material-ui/core'
 const ContainerMap = styled(Map)`
   height: 20vh;
   width: 100%;
-`
+`;
 
 const GridContainer = styled(Grid)`
   flex-grow: 1;
-`
+`;
 
 class Mappable extends React.Component {
   render() {
