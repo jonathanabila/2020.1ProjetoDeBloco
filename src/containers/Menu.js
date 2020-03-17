@@ -1,14 +1,8 @@
 import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Container,
-  Button,
-  TextField,
-  Grid,
-  Hidden
-} from '@material-ui/core';
-import Login from "../components/Login";
+import { Container, Button, TextField, Grid, Hidden } from '@material-ui/core';
+import Login from '../components/Login';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,13 +23,17 @@ const useStyles = makeStyles(theme => ({
 export default function Menu(props) {
   const classes = useStyles();
   const { width } = props;
-  
+
   const [showLogin, setOpen] = React.useState(false);
-  
+
   const handleOpen = () => {
     setOpen(true);
   };
-  
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const widthHandle = () => {
     let defaultConfig = {
       logo: 1,
@@ -78,10 +76,12 @@ export default function Menu(props) {
         </Grid>
 
         <Grid className={classes.button} item xs={widthHandle().button}>
-          <Button variant="outlined" onClick={handleOpen}>Entrar</Button>
+          <Button variant="outlined" onClick={handleOpen}>
+            Entrar
+          </Button>
         </Grid>
       </Grid>
-      <Login show={showLogin}/>
+      <Login show={showLogin} handleClose={handleClose} />
 
       {props.children}
     </Container>
