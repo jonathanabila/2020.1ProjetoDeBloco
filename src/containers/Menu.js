@@ -44,7 +44,7 @@ export default function Menu(props) {
 
     if (['xs', 'sm'].indexOf(width) >= 0) {
       defaultConfig = {
-        textField: 12,
+        textField: 9,
         button: 1
       };
     }
