@@ -1,0 +1,28 @@
+{
+  "mock": [
+    {
+    "key": 1,
+    "type": "hospital"
+    },
+    {
+      "key": 2,
+      "type": "store"
+    },
+    {
+      "key": 3,
+      "type": "police station"
+    },
+    {
+      "key": 4,
+      "type": "hotel"
+    },
+    {
+      "key": 5,
+      "type": "bank"
+    },
+    {
+      "key": 6,
+      "type": "beach"
+    }
+  ]
+}

@@ -1,20 +1,16 @@
-import React from 'react';
-import {
-  Grid,
-  Container,
-  Paper,
-  Typography,
-  Button,
-  Avatar,
-  Hidden
-} from '@material-ui/core';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
+import React from "react";
+import { Avatar, Button, Container, Grid, Hidden, Paper, Typography } from "@material-ui/core";
+import AvatarGroup from "@material-ui/lab/AvatarGroup";
 
-import { makeStyles } from '@material-ui/core/styles';
-import CameraAltIcon from '@material-ui/icons/CameraAlt';
-import RateReviewIcon from '@material-ui/icons/RateReview';
-import RecipeReviewCard from '../components/Cards';
-import { generateRandomCityImageURL } from '../helpers/fakerImage';
+import { makeStyles } from "@material-ui/core/styles";
+import CameraAltIcon from "@material-ui/icons/CameraAlt";
+import RateReviewIcon from "@material-ui/icons/RateReview";
+import RecipeReviewCard from "../components/Cards";
+import { generateRandomCityImageURL } from "../helpers/fakerImage";
+import { StoreContext } from "../store";
+import SignUp from "../components/SignUp";
+
+import mock from "../mock/mock.json";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -64,6 +60,35 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Recommendations() {
+  const { state, setState } = React.useContext(StoreContext);
+  
+  const filterInput = () => {
+    let filter = state.searchInput;
+    let filterLength = 0;
+    
+    if (filter !== null && filter.length > 0){
+      filterLength = filter.length
+    }
+    
+    if (filterLength === 0) {
+      return mock.mock
+    } else {
+      return mock.mock.filter((i) => {
+        if (i.type.slice(0, filterLength) === filter) {
+          return i
+        }
+      })
+    }
+  };
+  
+  const handleOpen = () => {
+    setState({...state, loginModal: true})
+  };
+
+  const handleClose = () => {
+    setState({...state, loginModal: false})
+  };
+  
   const classes = useStyles();
 
   return (
@@ -88,8 +113,8 @@ export default function Recommendations() {
                 <li>Receba alertas de próximos eventos</li>
                 <li>Interaja com a comunidade</li>
               </ul>
-
-              <Button variant="outlined">Inscreva-se</Button>
+              <Button variant="outlined" onClick={handleOpen}>Inscreva-se</Button>
+              <SignUp show={state.signUpModal} handleClose={handleClose}/>
             </Paper>
             <Paper className={classes.aWithoutDecoration}>
               <Typography variant="subtitle1" gutterBottom>
@@ -114,10 +139,9 @@ export default function Recommendations() {
             </Typography>
           </Paper>
 
-          {Array(10)
-            .fill(1)
-            .map((el, i) => (
-              <RecipeReviewCard key={i} />
+          {filterInput()
+            .map((es, i) => (
+              <RecipeReviewCard key={i.key}/>
             ))}
         </Grid>
 

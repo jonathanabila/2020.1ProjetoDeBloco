@@ -6,6 +6,7 @@ import Menu from './containers/Menu';
 import Map from './containers/Map';
 import Recommendations from './pages/Recommendations';
 import Footer from './components/Footer';
+import { StoreProvider } from "./store/index";
 
 const Container = styled.div`
   width: 100%;
@@ -15,21 +16,23 @@ const Container = styled.div`
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Container>
-          <Menu>
-            <Map />
-            <Switch>
-              <Route exact path="/" component={Recommendations} />
-              <Route exact path="/about" component={Recommendations} />
-              <Route render={() => <Redirect to="/" />} />
-            </Switch>
-          </Menu>
-          <Footer />
-        </Container>
-      </div>
-    </BrowserRouter>
+    <StoreProvider>
+      <BrowserRouter>
+        <div className="App">
+          <Container>
+            <Menu>
+              <Map />
+              <Switch>
+                <Route exact path="/" component={Recommendations} />
+                <Route exact path="/about" component={Recommendations} />
+                <Route render={() => <Redirect to="/" />} />
+              </Switch>
+            </Menu>
+            <Footer />
+          </Container>
+        </div>
+      </BrowserRouter>
+    </StoreProvider>
   );
 }
 
